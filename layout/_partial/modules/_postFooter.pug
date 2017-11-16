@@ -1,0 +1,76 @@
+footer.o-postFooter
+  = t.b.__ContentSource
+  .o-postFooter_postSource
+    a(href=`${t.SourceURL}`)
+      = t.lang_Source
+      | :
+      = t.b.__SourceLogo
+      amp-img(src=`${t.BlackLogoURL}` alt=`${t.SourceTitle}` width=`${t.LogoWidth}`  height=`${t.LogoHeight}` layout="fixed")
+      = t.b.SourceLogo__
+      = t.b.__NoSourceLogo
+      = t.SourceTitle
+      = t.b.NoSourceLogo__
+    = t.b.__RebloggedFrom
+    .postSource_reblog
+      .reblog_parentName
+        | リブログ元:
+        a(href=`${t.ReblogParentURL}`)
+          amp-img.favicon(src=`${t.ReblogParentPortraitURL_16}` alt='' width='16'  height='16' layout="fixed")
+            p(fallback) 画像
+          = t.ReblogParentName
+      .reblog_rootName
+        | オリジナル:
+        a(href=`${t.ReblogRootURL}`)
+          amp-img.favicon(src=`${t.ReblogParentPortraitURL_16}` alt='' width='16'  height='16' layout="fixed")
+            p(fallback) 画像
+          = t.ReblogRootName
+    = t.b.RebloggedFrom__
+  = t.b.ContentSource__
+  .o-postFooter_socialBtns
+    ul(class=`socialBtns_items ${t.b.__PermalinkPage}is-permalink${t.b.PermalinkPage__}`)
+      li.socialBtns_item.is-reblog
+        .socialBtns_btn
+          amp-social-share(type="tumblr" layout="fixed" width="27" height="27")
+      = t.b.__IfEnableHatebButton
+      li.socialBtns_item.is-hateb
+        .socialBtns_btn
+          amp-social-share(type="hateb" layout="fixed" width="27" height="27" data-share-endpoint=`http://b.hatena.ne.jp/entry/${t.Permalink}`)
+      = t.b.IfEnableHatebButton__
+      = t.b.__IfEnableTweetButton
+      li.socialBtns_item.is-twitter
+        .socialBtns_btn
+          amp-social-share(type="twitter" layout="fixed" width="27" height="27")
+      = t.b.IfEnableTweetButton__
+      = t.b.__IfEnableFbShareButton
+      li.socialBtns_item.is-fb
+        .socialBtns_btn
+          amp-social-share(type="facebook" layout="fixed" width="27" height="27" app_id=`${t.t.fb_app_id}`)
+      = t.b.IfEnableFbShareButton__
+      = t.b.__IfEnableLineButton
+      li.socialBtns_item.is-line
+        .socialBtns_btn
+          amp-social-share(type="line" layout="fixed" width="27" height="27" data-share-endpoint="http://line.me/R/msg/text/?TITLE%3ASOURCE_URL")
+      = t.b.IfEnableLineButton__
+      = t.b.__IfEnablePocketButton
+      li.socialBtns_item.is-pocket
+        .socialBtns_btn
+          amp-social-share(type="pocket" layout="fixed" width="27" height="27" data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL")
+      = t.b.IfEnablePocketButton__
+  //- = t.b.__PermalinkPage
+  //- .o-relatedPosts
+  //-   amp-list(width="300" height="100" layout="responsive" credentials="include"  src="https://api.tumblr.com/v2/blog/blog.solunita.net/posts?api_key={text:ApiKey}{block:Tags}&tag={URLSafeTag}{/block:Tags}&limit=5&clientId=CLIENT_ID(myCookieId)")
+  //-     template(type="amp-mustache")
+  //-       | {{response.posts}}
+  //-       ul
+  //-         li: a(href="{{post_url}}") {{slug}}
+  //-       | {{/response.posts}}
+  //- = t.b.PermalinkPage__
+  div(class=`o-postFooter_notesSection ${t.b.__PermalinkPage}is-permalink${t.b.PermalinkPage__}` {block:PermalinkPage}id="postNote"{/block:PermalinkPage})
+    = t.b.__NoteCount
+    span.notesSection_count
+      a(href=`${t.Permalink}#postNote`)
+        | #{t.NoteCount} Notes
+    = t.b.__PostNotes
+    .notesSection_list {PostNotes}
+    = t.b.PostNotes__
+    = t.b.NoteCount__

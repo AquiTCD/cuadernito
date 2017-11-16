@@ -1,0 +1,17 @@
+block variables
+doctype html
+html(amp lang="ja")
+  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# {block:IndexPage}blog: http://ogp.me/ns/blog# {/block:IndexPage}{block:PermalinkPage}article: http://ogp.me/ns/article# {PostID}{/block:PermalinkPage}")
+    include _partial/modules/_meta
+    include _partial/modules/_schema
+    include _partial/modules/_css
+  body(class='l-body {block:IndexPage}page-index{/block:IndexPage}{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}')
+    include _partial/modules/_analytics
+
+    include _partial/layouts/_header
+    include _partial/layouts/_sidebar
+
+    block content
+
+    include _partial/layouts/_footer
+    include _partial/modules/_js

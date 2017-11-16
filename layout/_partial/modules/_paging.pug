@@ -1,0 +1,35 @@
+.o-paging
+  = t.b.__PermalinkPagination
+  ul.o-paging_items.is-permalink
+    = t.b.__NextPost
+    li.o-paging_item: a.is-link.next(href=`${t.NextPost}`, rel='next')
+      i.fa.fa-angle-double-left &nbsp;
+      | ひとつ新しい記事
+    = t.b.NextPost__
+    = t.b.__PreviousPost
+    li.o-paging_item: a.is-link(href=`${t.PreviousPost}`)
+      |ひとつ古い記事&nbsp;
+      i.fa.fa-angle-double-right
+    = t.b.PreviousPost__
+  = t.b.PermalinkPagination__
+  = t.b.__Pagination
+  ul.o-paging_items
+    = t.b.__PreviousPage
+    li.o-paging_item: a.is-link(href=`${t.PreviousPage}`)
+      i.fa.fa-angle-double-left &nbsp;
+      | 新しい記事
+    = t.b.PreviousPage__
+    != t.b.__JumpPagination_length5
+    = t.b.__CurrentPage
+    li.o-paging_item.is-current #{t.PageNumber}
+    = t.b.CurrentPage__
+    = t.b.__JumpPage
+    li.o-paging_item: a.is-link.is-jump(href=`${t.URL}`) #{t.PageNumber}
+    = t.b.JumpPage__
+    = t.b.JumpPagination__
+    = t.b.__NextPage
+    li.o-paging_item: a.is-link.next(href=`${t.NextPage}`, rel='next')
+      | 古い記事&nbsp;
+      i.fa.fa-angle-double-right
+    = t.b.NextPage__
+  = t.b.Pagination__

@@ -1,0 +1,43 @@
+extends layout
+//- ============================================================
+block append variables
+  - var blocks = ['text', 'photo', 'photoset', 'quote', 'link', 'chat', 'video', 'audio', 'answer']
+//- ============================================================
+block append css
+block append js
+//- ============================================================
+block content
+  main.l-main.autopagerize_page_element(role='main')
+    .l-main_container
+      include _partial/modules/_displayNotes
+
+      each block in blocks
+        = t.b.__Posts
+        article(class=`o-post ${t.TagsAsClasses}`)
+          include _partial/modules/_postHeader
+
+          //- blocks
+          case block
+            when 'text'
+              include _partial/blocks/_text
+            when 'photo'
+              include _partial/blocks/_photo
+            when 'photoset'
+              include _partial/blocks/_photoset
+            when 'quote'
+              include _partial/blocks/_quote
+            when 'link'
+              include _partial/blocks/_link
+            when 'chat'
+              include _partial/blocks/_chat
+            when 'video'
+              include _partial/blocks/_video
+            when 'audio'
+              include _partial/blocks/_audio
+            when 'answer'
+              include _partial/blocks/_answer
+
+          include _partial/modules/_contentSource
+          include _partial/modules/_postFooter
+        = t.b.Posts__
+  include _partial/modules/_paging

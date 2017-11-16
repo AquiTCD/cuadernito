@@ -1,0 +1,15 @@
+= t.b.__Chat
+.o-postBlock.is-chat
+  = t.b.__Title
+  h1.o-postBlock_title
+    a(href=`${t.Permalink}`) #{t.Title}
+  = t.b.Title__
+  ul.o-postBlock_chat
+    = t.b.__Lines
+    li(class=`line ${t.Alt}`)
+      = t.b.__Label
+      span(class=`name user_${t.UserNumber}`) #{t.Label}
+      = t.b.Label__
+      = t.Line
+    = t.b.Lines__
+= t.b.Chat__

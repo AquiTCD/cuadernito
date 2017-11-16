@@ -1,0 +1,59 @@
+meta(charset="UTF-8")
+meta(name="google-site-verification" content="JuGe3ADFt8Gx4WMPpxveUrdsqNxw7FsmpNEnWEKqgjo")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
+meta(name="format-detection" content="telephone=no,address=no,email=no")
+meta(name="apple-mobile-web-app-capable" content="yes")
+title {block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}
+meta(property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
+meta(name="twitter:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
+meta(name="description" content="{block:Description}{MetaDescription}{/block:Description}")
+//- Custom Variables for Tumblr Theme
+meta(name='text:FbAppId')
+meta(name='text:AnalyticsId')
+meta(name='text:ApiKey')
+meta(name='if:Enable Hateb Button')
+meta(name='if:Enable Tweet Button')
+meta(name='if:Enable Fb Share Button')
+meta(name='if:Enable Line Button')
+meta(name='if:Enable Pocket Button')
+//- OGP General
+meta(property="og:type" content="{block:IndexPage}blog{/block:IndexPage}{block:PermalinkPage}article{PostID}{/block:PermalinkPage}")
+meta(property="og:image" content="{PortraitURL-128}")
+meta(property="og:description" content="{block:Description}{MetaDescription}{/block:Description}")
+meta(property='og:url', content="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}")
+meta(property="og:site_name" content="{Title}")
+meta(property="og:locale" content="ja_JP")
+
+//- OGP Facebook
+meta(property="fb:app_id" content="{text:fb_app_id}")
+//- OGP Twitter Cards
+meta(name="twitter:card" content="summary")
+//- / meta(name="twitter:site" content="@site")
+//- / meta(name="twitter:creator" content="@user")
+meta(name="twitter:description" content="{block:Description}{MetaDescription}{/block:Description}")
+meta(name="twitter:image" content="{PortraitURL-128}")
+
+link(rel='canonical', href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}")
+
+//- favicon and touch icon
+link(rel="apple-touch-icon" href='{PortraitURL-128}')
+//- link(rel="apple-touch-icon-precomposed" href="</apple-touch-icon.pngのパス>")
+link(rel="shortcut icon" href="{Favicon}")
+//- RSS
+link(rel="alternate", type="application/rss+xml", href="{RSS}")
+
+= t.b.__PermalinkPage
+= t.b.__Posts
+= t.b.__Photo
+meta(property="og:image", content="{PhotoURL-HighRes}")
+meta(name="twitter:image" content="{PhotoURL-HighRes}")
+= t.b.Photo__
+= t.b.__Photoset
+= t.b.__Photos
+meta(property="og:image", content="{PhotoURL-HighRes}")
+meta(name="twitter:image" content="{PhotoURL-HighRes}")
+= t.b.Photos__
+= t.b.Photoset__
+= t.b.Posts__
+= t.b.PermalinkPage__

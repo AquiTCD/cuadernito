@@ -1,0 +1,11 @@
+= t.b.__Photo
+.o-postBlock.is-photo
+  != t.LinkOpenTag
+  amp-img(src=`${t.PhotoURL_HighRes}` alt=`${t.PhotoAlt}` width="960" height="640" layout="responsive")
+    p(fallback) 画像を表示できませんでした
+  != t.LinkCloseTag
+  = t.b.__Caption
+  .o-postBlock_caption
+    = t.Caption
+  = t.b.Caption__
+= t.b.Photo__

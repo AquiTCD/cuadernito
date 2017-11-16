@@ -1,0 +1,329 @@
+.o-postBlock
+  &.is-photo
+    //
+  &.is-text
+    // NOTE: the selector has ':not([class])' in below is for default style which created by blog post like markdown
+    h2:not([class])
+      font-weight: bold
+      font-size: $font-size-large
+      border-left: rhythmical-space(0.25) solid $black-base
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      background-color: $bg-color-emphasis
+      vertical-rhythm: true
+      rhythmical-margin: 0 0 1 0
+      +media-query(media-medium)
+        border-left: rhythmical-space(0.5) solid $black-base
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+    h3:not([class])
+      font-weight: bold
+      font-size: $font-size-large
+      border-bottom: 2px solid $black-base
+      border-left: rhythmical-space(0.125) solid $black-base
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.125 1 0.125
+      +media-query(media-medium)
+        border-left: rhythmical-space(0.25) solid $black-base
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+        rhythmical-margin: 0 0.25 1 0.25
+    h4:not([class])
+      font-weight: bold
+      font-size: $font-size-large
+      border-left: rhythmical-space(0.125) solid $black-base
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.125 1 0.125
+      +media-query(media-medium)
+        border-left: rhythmical-space(0.25) solid $black-base
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+        rhythmical-margin: 0 0.25 1 0.25
+    h5:not([class])
+      font-weight: bold
+      font-size: $font-size-base
+      border-left: rhythmical-space(0.125) solid $black-base
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.125 1 0.125
+      +media-query(media-medium)
+        border-left: rhythmical-space(0.25) solid $black-base
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+        rhythmical-margin: 0 0.25 1 0.25
+    h6:not([class])
+      font-weight: bold
+      font-size: $font-size-base
+      padding-left: rhythmical-space(0.375)
+      padding-right: rhythmical-space(0.375)
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.125 1 0.125
+      +media-query(media-medium)
+        padding-left: rhythmical-space(0.75)
+        padding-right: rhythmical-space(0.75)
+        rhythmical-margin: 0 0.25 1 0.25
+    // ------------------------------------------------------------
+    // List
+    // ------------------------------------------------------------
+    /*
+  ---
+  name: list
+  tag:
+    - base
+    - latest
+  category:
+    - article
+    - article/list
+  compile: true
+  ---
+  ```jade
+  article
+    dl
+      dt 定義型リスト 用語
+      dd 定義型リスト 定義
+    p テウトテストテスト
+    h3 順序付きリスト(ol)
+    ol
+      li リストアイテム 1
+      li
+        | リストアイテム 2
+        ol
+          li 二重
+          li
+            | 二重
+            ol
+              li 三重
+      li リストアイテム
+    p テウトテストテスト
+    h3 並列列挙リスト(ul)
+    ul
+      li リストアイテム 1
+      li リストアイテム 2
+      li
+        | リストアイテム 2
+        ul
+          li 二重
+          li
+            | 二重
+            ul
+              li 三重
+  ```
+    */
+    ol:not([class]), ul:not([class])
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+      li
+        rhythmical-margin: 0 0 0 0.75
+        & > ol, & > ul
+          margin-left: 0
+    ol:not([class])
+      list-style-type: decimal
+    ul:not([class])
+      list-style-type: disc
+      ul:not([class])
+        list-style-type: circle
+        ul:not([class])
+          list-style-type: square
+    dl:not([class])
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+      dd:not([class])
+        rhythmical-margin: 0 0 0 0.75
+    // ------------------------------------------------------------
+    // Image
+    // ------------------------------------------------------------
+    img:not([class])
+      border: solid 5px $black-base
+      border-radius: 3px
+      display: block
+    // ------------------------------------------------------------
+    // Quote
+    // ------------------------------------------------------------
+    blockquote:not([class])
+      vertical-rhythm: true
+      background: $pure-white
+      border: 1px solid $bg-color-emphasis
+      border-left: rhythmical-space(0.25) solid $bg-color-emphasis
+      border-radius: 5px
+      rhythmical-padding: 0.5 0.5 0.5 0.5
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+    // ------------------------------------------------------------
+    // Paragraph and etc.
+    // ------------------------------------------------------------
+    p:not([class])
+      text-align: justify
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+    em:not([class])
+      border-bottom: 1px dotted @color
+    strong:not([class])
+      font-weight: bold
+      line-marker: true
+    code:not([class])
+      font-family: $font-family-monospace
+    // ------------------------------------------------------------
+    // Table
+    // ------------------------------------------------------------
+    table:not([class])
+      border-collapse: collapse
+      border-spacing: 0
+      overflow: auto
+      display: block
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+      th:not([class])
+        padding: 5px 10px
+        background: tint($bg-color-emphasis, 20%)
+        font-weight: bold
+        &:first-child
+          border-radius: 5px 0 0 0
+        &:last-child
+          border-radius: 0 5px 0 0
+      td:not([class])
+        padding: 5px 10px
+      tr:not([class])
+        background: tint($bg-color-emphasis, 60%)
+        border-bottom: 1px solid shade($bg-color-emphasis, 5%)
+        &:last-child
+          border-bottom: none
+        &:nth-child(odd)
+          background: tint($bg-color-emphasis, 75%)
+    // ------------------------------------------------------------
+    // Blocks
+    // ------------------------------------------------------------
+    pre:not([class])
+      background: $black-base
+      color: $white-base
+      border-radius: 3px
+      line-height: 1.125
+      overflow-x: auto
+      white-space: pre
+      rhythmical-padding: 0.25 0.5 0.25 0.5
+      rhythmical-margin: 0 0.5 1 0.5
+      +media-query(media-medium)
+        rhythmical-margin: 0 1 1 1
+    pre:not([class]) > code
+      letter-spacing: 0
+      background: none
+      color: inherit
+      border-radius: inherit
+      padding: inherit
+      margin: auto
+      font-smoothing: antialiased
+    code:not([class]),
+    var:not([class]),
+    samp:not([class]),
+    dfn:not([class])
+      font-size: $font-size-small
+      font-family: $font-family-monospace
+      background: shade($pure-white, round($amount-base * 0.25))
+      color: $pure-black
+      border-radius: 3px
+      rhythmical-padding: 0.0625 0.25 0.0625 0.25
+      rhythmical-margin: 0 0.125 0 0.125
+    kbd:not([class])
+      display: inline-block
+      padding: 3px 5px
+      margin: auto 5px 2px 5px
+      font-size: $font-size-small
+      line-height: 10px
+      color: $pure-black
+      vertical-align: middle
+      background-color: $pure-white
+      border: solid 1px $grey-base
+      border-bottom-color: $grey-base
+      border-radius: 3px
+      box-shadow: inset 0 -1px 0 $grey-base
+  &.is-quote
+    blockquote
+      @extend .o-postBlock.is-text blockquote:not([class])
+      margin-top: rhythmical-space(1)
+      .fa-quote-left
+        margin-right: 0.5em
+      .fa-quote-right
+        margin-left: 0.5em
+      &.is-short
+        font-size: $font-size-x-large
+      &.is-medium
+        font-size: $font-size-large   = $font-size-base * $ratio-base
+      &.is-long
+        font-size: 1rem
+.o-postBlock_title
+  font-weight: bold
+  font-size: $font-size-x-large
+  display: flex
+  align-items: center
+  text-align: center
+  justify-content: center
+  vertical-rhythm: true
+  rhythmical-margin: 0 0 0.5 0
+  link-variation: $font-color-base true
+  &:before,
+  &:after
+    content: ''
+    flex-grow: 1
+    height: 3px
+    background: $grey-base
+    min-width: $unit-size-base
+    display: inline-block
+    vertical-align: middle
+   &:before
+    margin-right: $unit-size-base
+   &:after
+    margin-left: $unit-size-base
+.o-postBlock_caption, .o-postBlock_quoteSource
+  vertical-rhythm: true
+  rhythmical-margin: 0 0.5 1 0.5
+  +media-query(media-medium)
+    rhythmical-margin: 0 1 1 1
+.o-postBlock_link
+  font-weight: bold
+  font-size: $font-size-large
+  border-left: rhythmical-space(0.25) solid $black-base
+  padding-left: rhythmical-space(0.25)
+  padding-right: rhythmical-space(0.25)
+  background-color: $grey-tint
+  vertical-rhythm: true
+  rhythmical-margin: 0 0 1 0
+  +media-query(media-medium)
+    border-left: rhythmical-space(0.5) solid $black-base
+    padding-left: rhythmical-space(0.5)
+    padding-right: rhythmical-space(0.5)
+.o_postBlock_linkUrl
+//
+.o-postBlock_linkDescription
+  @extend .o-postBlock_caption
+.o-postBlock_chat
+  vertical-rhythm: true
+  rhythmical-margin: 0 0.5 1 0.5
+  +media-query(media-medium)
+    rhythmical-margin: 0 1 1 1
+  .line
+    border-bottom: 1px dashed $grey-base
+  .name
+    font-weight: bold
+    padding-left: 0.5em
+    padding-right: 0.5em
+    margin-right: 0.5em
+    border-radius: 3px
+  .user_1
+    background: rgba(rgb($grey-tint), 1.00)
+  .user_2
+    background: rgba(rgb($grey-tint), 0.66)
+  .user_3
+    background: rgba(rgb($grey-tint), 0.33)
