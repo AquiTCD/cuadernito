@@ -2,19 +2,11 @@ main.l-main.autopagerize_page_element(role='main')
   .l-main_container
     //- include /modules/_displayNotes
     each post in site.posts.sort('date', -1).toArray()
-      //- = t.b.__Posts
-      article.o-post
-        //- include _molecules/_postHeader
-            = t.b.__Text
-        .o-postBlock.is-text
-          h1.o-postBlock_title
-            a(href=url_for(post.path))=post.title || 'No Title'
-          .o-postBlock_content
-            page.content
+      include ./_partial/_organisms/_article
+      
+        
 
-//- extends includes/layout
-
-block content
+//- block content
   //- - var categoriesList = list_categories({ show_count: false })
   //- - var tagsList = list_tags({ show_count: false })
   //- - var archivesList = list_archives({ show_count: false })

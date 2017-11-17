@@ -1,0 +1,9 @@
+header.m-postHeader
+  .m-postHeader_tags
+    if page.tags
+      i.fa.fa-fw.fa-tags
+      each tag in page.tags
+        include ../_atoms/_tag
+  .m-postHeader_date
+    i.fa.fa-fw.fa-clock-o
+      include ../_atoms/_postDate

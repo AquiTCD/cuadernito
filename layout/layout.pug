@@ -1,11 +1,7 @@
-block variables
+//- block variables
 doctype html
 html(amp lang=config.language)
-  head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# {block:IndexPage}blog: http://ogp.me/ns/blog# {/block:IndexPage}{block:PermalinkPage}article: http://ogp.me/ns/article# {PostID}{/block:PermalinkPage}")
-    title #{config.title} - #{page.title}
-    include _partial/_atoms/_meta
-    include _partial/_atoms/_schema
-    include _partial/_atoms/_css
+  include ./_partial/_molecules/_head
   body.t-body
     != body
     //- include _partial/_atoms/_analytics
