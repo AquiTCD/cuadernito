@@ -5,23 +5,24 @@
 @import 'kouto-swiss'
 meyer-reset()
 box-sizing-reset()
-// follows FLOCSS design concept
+// follows atomic design concept
 // ============================================================
 // base settings *order sensitive*
 // ============================================================
-@import 'foundation/_fonts'
-@import 'foundation/_colors'
-@import 'foundation/_variables'
-@import 'foundation/_mixins'
-@import 'foundation/_base'
+@import '_global/_fonts'
+@import '_global/_colors'
+@import '_global/_variables'
+@import '_global/_mixins'
+@import '_global/_base'
 // ============================================================
-// Layouts
+// atoms | is minimum components
 // ============================================================
-@import 'layouts/*'
+@require '_atoms/*'
 // ============================================================
-// objects
+// molecules, atoms make a molecule
 // ============================================================
-@require 'objects/*'
-// components
-// projects
-// utilities
+@import '_molecules/*'
+// ============================================================
+// organisms, molecules make a organism
+// ============================================================
+@import '_organisms/*'
