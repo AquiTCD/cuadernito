@@ -4,10 +4,9 @@ meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
 meta(name="format-detection" content="telephone=no,address=no,email=no")
 meta(name="apple-mobile-web-app-capable" content="yes")
-title {block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}
 meta(property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
 meta(name="twitter:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
-meta(name="description" content="{block:Description}{MetaDescription}{/block:Description}")
+meta(name="description" content=config.description)
 //- Custom Variables for Tumblr Theme
 meta(name='text:FbAppId')
 meta(name='text:AnalyticsId')
@@ -43,17 +42,10 @@ link(rel="shortcut icon" href="{Favicon}")
 //- RSS
 link(rel="alternate", type="application/rss+xml", href="{RSS}")
 
-= t.b.__PermalinkPage
-= t.b.__Posts
-= t.b.__Photo
-meta(property="og:image", content="{PhotoURL-HighRes}")
-meta(name="twitter:image" content="{PhotoURL-HighRes}")
-= t.b.Photo__
-= t.b.__Photoset
-= t.b.__Photos
-meta(property="og:image", content="{PhotoURL-HighRes}")
-meta(name="twitter:image" content="{PhotoURL-HighRes}")
-= t.b.Photos__
-= t.b.Photoset__
-= t.b.Posts__
-= t.b.PermalinkPage__
+//- if it is photo page
+//- meta(property="og:image", content="{PhotoURL-HighRes}")
+//- meta(name="twitter:image" content="{PhotoURL-HighRes}")
+
+//- if it is photo set
+//- meta(property="og:image", content="{PhotoURL-HighRes}")
+//- meta(name="twitter:image" content="{PhotoURL-HighRes}")
