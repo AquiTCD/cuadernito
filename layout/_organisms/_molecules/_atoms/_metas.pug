@@ -8,14 +8,10 @@ meta(property="og:title" content="{block:PostSummary}{PostSummary} - {/block:Pos
 meta(name="twitter:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
 meta(name="description" content=config.description)
 //- Custom Variables for Tumblr Theme
-meta(name='text:FbAppId')
-meta(name='text:AnalyticsId')
-meta(name='text:ApiKey')
-meta(name='if:Enable Hateb Button')
-meta(name='if:Enable Tweet Button')
-meta(name='if:Enable Fb Share Button')
-meta(name='if:Enable Line Button')
-meta(name='if:Enable Pocket Button')
+meta(name=`${fb_app_id}`)
+meta(name=`${google_analytics}`)
+//- meta(name=`${text:ApiKey}`}
+
 //- OGP General
 meta(property="og:type" content="{block:IndexPage}blog{/block:IndexPage}{block:PermalinkPage}article{PostID}{/block:PermalinkPage}")
 meta(property="og:image" content="{PortraitURL-128}")
@@ -25,7 +21,7 @@ meta(property="og:site_name" content="{Title}")
 meta(property="og:locale" content="ja_JP")
 
 //- OGP Facebook
-meta(property="fb:app_id" content="{text:fb_app_id}")
+meta(property="fb:app_id" content=`${fb_app_id}`)
 //- OGP Twitter Cards
 meta(name="twitter:card" content="summary")
 //- / meta(name="twitter:site" content="@site")

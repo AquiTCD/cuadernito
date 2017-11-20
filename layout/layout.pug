@@ -1,15 +1,11 @@
 //- block variables
 doctype html
 html(amp lang=config.language)
-  include ./_partial/_molecules/_head
+  != partial('_organisms/_molecules/_head')
   body.t-body
+    != partial('_organisms/_molecules/_atoms/_analytics')
+    != partial('_organisms/_molecules/_atoms/_siteHeader')
+    != partial('_organisms/_molecules/_atoms/_sidebar')
     != body
-    //- include _partial/_atoms/_analytics
-    //- 
-    //- include _partial/layouts/_header
-    //- include _partial/layouts/_sidebar
-    //- 
-    //- block content
-    //- 
-    //- include _partial/layouts/_footer
-    //- include _partial/modules/_js
+    != partial('_organisms/_molecules/_paging')
+    != partial('_organisms/_molecules/_atoms/_siteFooter')

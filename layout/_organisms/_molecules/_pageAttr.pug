@@ -1,0 +1,8 @@
+if isTagPosts
+  h2.tagged タグ "#{tag}" が付けられた記事
+
+if isSearchPosts
+  if searchResultCount
+    h2 "#{searchQuery}"の検索結果: #{searchResultCount} 件
+  else
+    p 該当する記事は見つかりませんでした

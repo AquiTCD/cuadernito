@@ -1,0 +1,9 @@
+ul.o-paging_items.is-permalink
+  if nextPost
+    li.o-paging_item: a.is-link.next(href=`${nextPost}`, rel='next')
+      i.fa.fa-angle-double-left &nbsp;
+      | ひとつ新しい記事
+  if previousPost
+    li.o-paging_item: a.is-link(href=`${previousPost}`)
+      |ひとつ古い記事&nbsp;
+      i.fa.fa-angle-double-right

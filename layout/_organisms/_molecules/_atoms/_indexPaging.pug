@@ -1,0 +1,15 @@
+ul.o-paging_items
+  if previousPage
+    li.o-paging_item: a.is-link(href=`${previousPage}`)
+      i.fa.fa-angle-double-left &nbsp;
+      | 新しい記事
+  //- != t.b.__JumpPagination_length5
+  //- = t.b.__CurrentPage
+  //- li.o-paging_item.is-current #{t.PageNumber}
+  //- = t.b.CurrentPage__
+  //- = t.b.__JumpPage
+  //- li.o-paging_item: a.is-link.is-jump(href=`${t.URL}`) #{t.PageNumber}
+  if nextPage
+    li.o-paging_item: a.is-link.next(href=`${nextPage}`, rel='next')
+      | 古い記事&nbsp;
+      i.fa.fa-angle-double-right

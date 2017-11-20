@@ -3,7 +3,7 @@ header.m-postHeader
     if page.tags
       i.fa.fa-fw.fa-tags
       each tag in page.tags
-        include ../_atoms/_tag
+        != partial('_atoms/_tag', {tag:tag})
   .m-postHeader_date
     i.fa.fa-fw.fa-clock-o
-      include ../_atoms/_postDate
+      != partial('_atoms/_postDate')
