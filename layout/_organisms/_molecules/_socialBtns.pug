@@ -1,14 +1,7 @@
-.o-postFooter_socialBtns
-  ul(class=`socialBtns_items is-permalink`)
-    li.socialBtns_item.is-reblog
-      != partial('_atoms/_tumblrBtn')
-    li.socialBtns_item.is-hateb
-      != partial('_atoms/_hatebBtn')
-    li.socialBtns_item.is-twitter
-      != partial('_atoms/_twitterBtn')
-    li.socialBtns_item.is-fb
-      != partial('_atoms/_fbBtn')
-    li.socialBtns_item.is-line
-      != partial('_atoms/_lineBtn')
-    li.socialBtns_item.is-pocket
-      != partial('_atoms/_pocketBtn')
+ul.socialBtns(class=is_post() ? 'is-permalink' : '')
+  != partial('_atoms/_tumblrBtn')
+  != partial('_atoms/_hatebBtn')
+  != partial('_atoms/_twitterBtn')
+  != partial('_atoms/_fbBtn')
+  != partial('_atoms/_lineBtn')
+  != partial('_atoms/_pocketBtn')

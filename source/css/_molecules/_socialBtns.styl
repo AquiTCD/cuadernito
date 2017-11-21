@@ -1,0 +1,31 @@
+.socialBtns
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  list-style: none
+  margin-bottom: 0
+  border: 1px solid $black-base
+  border-radius: 3px
+  background: $white-base
+  height: 43px
+  &.is-permalink
+    fixed: bottom left
+    width: 100%
+    z-index: 100
+    z-depth: 1
+    margin: 0
+    border: 0
+    border-radius: 0
+    +media-query(media-medium)
+      position: inherit
+      width: inherit
+      z-index: inherit
+      z-depth: 0
+      margin: inherit
+      border: 1px solid $black-base
+      border-radius: 3px
+    .socialBtns_item
+      border-right: none
+      +media-query(media-medium)
+        border-right: 1px solid $black-base
