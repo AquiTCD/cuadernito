@@ -4,4 +4,8 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# {block:IndexPage}blo
   != partial('_atoms/_links')
   != partial('_atoms/_amps')
   != partial('_atoms/_schema')
-  != css('css/style.css')
+  if cache
+    != ampcss('css/style.css')
+  else
+    != css('css/style.css')
+  //- 
