@@ -1,9 +1,8 @@
 header.postHeader
   .postHeader_tags
-    if page.tags
+    if post.tags
       i.fa.fa-fw.fa-tags
-      each tag in page.tags
-        != partial('_atoms/_tag', {tag:tag})
+      != list_tags(post.tags, { show_count: false})
   .postHeader_date
     i.fa.fa-fw.fa-clock-o
-      != partial('_atoms/_postDate')
+    != partial('_atoms/_postDate')
