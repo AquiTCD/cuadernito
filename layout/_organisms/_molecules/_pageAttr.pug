@@ -1,5 +1,8 @@
-if isTagPosts
-  h2.tagged タグ "#{tag}" が付けられた記事
+if is_tag()
+  h2.tagged タグ "#{page.tag}" が付けられた記事
+
+if is_category()
+  h2.tagged カテゴリが "#{page.category}" の記事
 
 if isSearchPosts
   if searchResultCount

@@ -6,6 +6,9 @@ html(amp lang=config.language)
     != partial('_organisms/_molecules/_atoms/_analytics')
     != partial('_organisms/_molecules/_siteHeader')
     != partial('_organisms/_siteSidebar')
-    != body
+    main.l-main.autopagerize_page_element(role='main')
+      .l-main_container
+        != partial('_organisms/_molecules/_pageAttr')
+        != body
     != partial('_organisms/_molecules/_paging')
     != partial('_organisms/_molecules/_siteFooter')

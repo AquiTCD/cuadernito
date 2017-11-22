@@ -1,8 +1,5 @@
-main.l-main.autopagerize_page_element(role='main')
-  .l-main_container
-    != partial('_organisms/_molecules/_pageAttr')
-    each post in site.posts.sort('date', -1).toArray()
-      != partial('_organisms/_post', {post: post})
+each post in site.posts.sort('date', -1).toArray()
+  != partial('_organisms/_post', {post: post})
       
         
 

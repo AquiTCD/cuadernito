@@ -1,1 +1,2 @@
-!= partial('index', {isTagPosts: true})
+each post in page.posts.sort('date', -1).toArray()
+  != partial('_organisms/_post', {post: post, isTagPosts: true})
