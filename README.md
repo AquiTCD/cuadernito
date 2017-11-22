@@ -1,8 +1,14 @@
 Hexo theme: Cuadernito
-=================
+============================================================
 
-##Configuration
+Requirements
+------------------------------------------------------------
++ hexo-related-popular-posts
++ hexo-include-markdown
++ hexo-generator-search
 
+Configuration
+------------------------------------------------------------
 ``` yml
 # Header
 menu:
@@ -18,10 +24,3 @@ fancybox: true
 google_analytics:
 favicon: /favicon.png
 ```
-
-- **menu** - Navigation menu
-- **rss** - RSS link
-- **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
-- **fancybox** - Enable [Fancybox](http://fancyapps.com/fancybox/)
-- **google_analytics** - Google Analytics ID
-- **favicon** - Favicon path
