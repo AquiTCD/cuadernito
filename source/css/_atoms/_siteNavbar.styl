@@ -1,18 +1,7 @@
-.o-blogHeader
-  vertical-rhythm: true
-  z-depth: 1
-.o-blogHeader_title
-  background: $black-base
-  text-align: center
-  rhythmical-padding: 0.5 0 0.5 0
-  link-fix: true
-.o-blogHeader_logo
-  max-height: 192px
-  background: transparent
-.o-blogHeader_nav
+.siteNavbar
   background: $black-base
   link-variation: $white-base true
-.o-blogHeader_items
+.siteNavbar_items
   display: flex
   flex-flow: row nowrap
   justify-content: flex-start
@@ -30,12 +19,12 @@
     margin-right: auto
     padding-left: rhythmical-space(1)
     padding-right: rhythmical-space(1)
-.o-blogHeader_item
+.siteNavbar_item
   align-self: center
   margin-right: 1.5rem
   &:first-child
     margin-right: auto
-.o-blogHeader_search
+.siteNavbar_search
   font-size: $font-size-base
   width: @font-size * 14
   height: @font-size * 1.25
@@ -45,7 +34,7 @@
   position: relative
   +media-query(media-medium)
     width: @font-size * 24
-.o-blogHeader_searchField
+.siteNavbar_searchField
   border: 0
   outline: 0
   absolute: top 0 left 1rem
@@ -55,7 +44,7 @@
   -webkit-appearance: none
   +media-query(media-medium)
     width: @font-size * 21
-.o-blogHeader_btn
+.siteNavbar_btn
   color: $white-base
   background: $black-base
   border: 1px solid $white-base
@@ -69,6 +58,3 @@
     border-top-right-radius: ($font-size-base * 1.25 / 2)
     border-bottom-right-radius: ($font-size-base * 1.25 / 2)
     height: 100%
-.o-blogHeader_description
-  text-align: center
-  background: $primary-color-tint
