@@ -1,0 +1,18 @@
+.toc
+  background-color: shade($pure-white, round($amount-base * 0.25))
+  vertical-rhythm: true
+  rhythmical-margin: 0 0.5 1 0.5
+  border-radius: 3px
+  +media-query(media-medium)
+    rhythmical-margin: 0 1 1 1
+.toc-item
+  rhythmical-margin: 0 0 0 0.75
+  link-variation: $primary-text true
+  & > ol, & > ul
+    margin-left: 0
+  ul
+    list-style-type: disc
+    ul
+      list-style-type: circle
+      ul
+        list-style-type: square
