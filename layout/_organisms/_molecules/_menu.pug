@@ -1,0 +1,29 @@
+ul.menu
+  li.menu_item: a(href="/")
+    i.fa.fa-fw.fa-home
+    | &nbsp;Home
+  li.menu_item: a(href="/about")
+    i.fa.fa-fw.fa-id-card
+    | &nbsp;About
+  //- li.menu_item
+    amp-accordion.menu_accordion
+      section
+        span.menu_accordionTitle
+          i.fa.fa-angle-right &nbsp; 人気のある記事
+        ul.menu_tags
+          li: a.menu_tag(href="") 1
+          li: a.menu_tag(href="") 2
+  li.menu_item
+    != partial('_atoms/_tagcloud')
+  li.menu_item: a(href="/photo")
+    i.fa.fa-fw.fa-picture-o
+    | &nbsp;旅写真
+  li.menu_item: a(href="http://the-excursion-for-me.tumblr.com/")
+    i.fa.fa-fw.fa-book
+    | &nbsp;旅日記
+  li.menu_item: a(href="/archive")
+    i.fa.fa-fw.fa-archive
+    | &nbsp;Archive
+  li.menu_item: a(href="/rss")
+    i.fa.fa-fw.fa-fw.fa-rss-square
+    | &nbsp;RSS
