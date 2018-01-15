@@ -149,6 +149,7 @@ article
       rhythmical-margin: 0 0 0 0.75
       & > ol, & > ul
         margin-left: 0
+        margin-bottom: 0
   ol:not([class])
     list-style-type: decimal
   ul:not([class])
@@ -209,8 +210,21 @@ article
   blockquote:not([class])
     vertical-rhythm: true
     background: $pure-white
-    border: 1px solid $bg-color-emphasis
     border-left: rhythmical-space(0.25) solid $bg-color-emphasis
+    color: $secondary-text
+    rhythmical-padding: 0.5 0.5 0.5 0.5
+    rhythmical-margin: 0 0.5 1 0.5
+    +media-query(media-medium)
+      rhythmical-margin: 0 1 1 1
+    p:last-of-type
+      margin-bottom: 0
+  // ------------------------------------------------------------
+  // exblock(like a specific series box)
+  // ------------------------------------------------------------
+  .exblock
+    vertical-rhythm: true
+    background: $pure-white
+    border: 1px solid $bg-color-emphasis
     border-radius: 5px
     rhythmical-padding: 0.5 0.5 0.5 0.5
     rhythmical-margin: 0 0.5 1 0.5
@@ -296,6 +310,48 @@ article
   // ------------------------------------------------------------
   // Blocks
   // ------------------------------------------------------------
+  figure.highlight
+    font-family: $font-family-monospace
+    figcaption
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+      background: $grey-tint
+      border: 1px solid $black-base
+      border-bottom: none
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      rhythmical-margin: 0 0.25 0 0.25
+      +media-query(media-medium)
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+        rhythmical-margin: 0 0.5 0 0.5
+    table
+      background: $black-base
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.25 1 0.25
+      +media-query(media-medium)
+        rhythmical-margin: 0 0.5 1 0.5
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+      &:first-child
+        border-top-left-radius: 3px
+        border-top-right-radius: 3px
+    tr:not([class])
+      background: none
+      border-bottom: none
+      &:last-child
+        border-bottom: none
+      &:nth-child(odd)
+        background: none
+    pre
+      background: $black-base
+      border-radius: 0
+      min-width: 100%
+      margin: 0
+
+  // ------------------------------------------------------------
+  // Blocks
+  // ------------------------------------------------------------
   /*
   ---
   name: Blocks
@@ -351,3 +407,60 @@ article
     border-bottom-color: $grey-base
     border-radius: 3px
     box-shadow: inset 0 -1px 0 $grey-base
+  .linkbox
+    font-feature-settings: 'palt' 1
+    vertical-rhythm: true
+    background: $pure-white
+    border: 1px solid $bg-color-emphasis
+    border-right: rhythmical-space(0.25) solid $bg-color-emphasis
+    border-radius: 5px
+    rhythmical-padding: 0.5 0.5 0.5 0.5
+    rhythmical-margin: 0 0.5 1 0.5
+    display: flex
+    +media-query(media-medium)
+      rhythmical-margin: 0 1 1 1
+  .linkbox_image
+    width: 23%
+  .linkbox_info
+    width: 77%
+    rhythmical-padding: 0 0 0 0.5
+  .linkbox_title
+    font-weight: bold
+  .linkbox_description
+    font-weight: normal
+    font-size: 0.8em
+    text-align: right
+    line-height: 1
+  .linkbox_shoplinks
+    display: flex
+    flex-wrap: wrap
+  .linkbox_shopBtn
+    rhythmical-padding: 0.25 0.25 0 0
+    link-variation: $black-base true
+  .shopBtn_link
+    font-weight: bold
+    rhythmical-padding: 0.25 0.25 0.25 0.25
+    border-radius: 7px
+    &.is-amazon
+      &:visited, &:active
+        border: 2px solid $ssc.Amazon
+        background: tint($ssc.Amazon, ($amount-base * 2))
+      &:hover
+        background: $ssc.Amazon
+        border: 2px solid $ssc.Amazon
+        color: $white-base
+      &:before
+        content: url(https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/amazon.svg)
+    &.is-rakuten
+      :visited, :active
+        border: 2px solid $sc.Rakuten
+        background: tint($sc.Rakuten, ($amount-base * 2))
+      &:hover
+        background: $sc.Rakuten
+        border: 2px solid $sc.Rakuten
+        color: $white-base
+      &:before
+        content: "R"
+        color: $white-base
+        border-radius: 50%
+        background: $black-base
