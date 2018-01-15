@@ -210,8 +210,21 @@ article
   blockquote:not([class])
     vertical-rhythm: true
     background: $pure-white
-    border: 1px solid $bg-color-emphasis
     border-left: rhythmical-space(0.25) solid $bg-color-emphasis
+    color: $secondary-text
+    rhythmical-padding: 0.5 0.5 0.5 0.5
+    rhythmical-margin: 0 0.5 1 0.5
+    +media-query(media-medium)
+      rhythmical-margin: 0 1 1 1
+    p:last-of-type
+      margin-bottom: 0
+  // ------------------------------------------------------------
+  // exblock(like a specific series box)
+  // ------------------------------------------------------------
+  .exblock
+    vertical-rhythm: true
+    background: $pure-white
+    border: 1px solid $bg-color-emphasis
     border-radius: 5px
     rhythmical-padding: 0.5 0.5 0.5 0.5
     rhythmical-margin: 0 0.5 1 0.5
