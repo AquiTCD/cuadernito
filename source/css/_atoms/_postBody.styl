@@ -297,6 +297,48 @@ article
   // ------------------------------------------------------------
   // Blocks
   // ------------------------------------------------------------
+  figure.highlight
+    font-family: $font-family-monospace
+    figcaption
+      border-top-left-radius: 3px
+      border-top-right-radius: 3px
+      background: $grey-tint
+      border: 1px solid $black-base
+      border-bottom: none
+      padding-left: rhythmical-space(0.25)
+      padding-right: rhythmical-space(0.25)
+      rhythmical-margin: 0 0.25 0 0.25
+      +media-query(media-medium)
+        padding-left: rhythmical-space(0.5)
+        padding-right: rhythmical-space(0.5)
+        rhythmical-margin: 0 0.5 0 0.5
+    table
+      background: $black-base
+      vertical-rhythm: true
+      rhythmical-margin: 0 0.25 1 0.25
+      +media-query(media-medium)
+        rhythmical-margin: 0 0.5 1 0.5
+      border-bottom-left-radius: 3px
+      border-bottom-right-radius: 3px
+      &:first-child
+        border-top-left-radius: 3px
+        border-top-right-radius: 3px
+    tr:not([class])
+      background: none
+      border-bottom: none
+      &:last-child
+        border-bottom: none
+      &:nth-child(odd)
+        background: none
+    pre
+      background: $black-base
+      border-radius: 0
+      min-width: 100%
+      margin: 0
+
+  // ------------------------------------------------------------
+  // Blocks
+  // ------------------------------------------------------------
   /*
   ---
   name: Blocks
