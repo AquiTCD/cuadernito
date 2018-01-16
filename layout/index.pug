@@ -1,8 +1,6 @@
-each post in site.posts.sort('date', -1).toArray()
-  != partial('_organisms/_post', {post: post})
+each post in page.posts.sort('date', -1).toArray()
+  != partial('_organisms/_post', {post: post, index: true})
       
-        
-
 //- block content
   //- - var categoriesList = list_categories({ show_count: false })
   //- - var tagsList = list_tags({ show_count: false })
