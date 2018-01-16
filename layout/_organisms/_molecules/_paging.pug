@@ -26,7 +26,8 @@
             li.paging_item.is-current
               = page.current
           else
-            li.paging_item: a.is-link.is-jump(href=url_for(`page/${pageNum}/`))
+            - pagePath = pageNum === 1 ? '/' : '/page/' + pageNum + '/'
+            li.paging_item: a.is-link.is-jump(href=url_for(`${pagePath}`))
               = pageNum
           - pageNum++
         if page.next !== 0
