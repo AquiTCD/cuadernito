@@ -1,12 +1,21 @@
-head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# {block:IndexPage}blog: http://ogp.me/ns/blog# {/block:IndexPage}{block:PermalinkPage}article: http://ogp.me/ns/article# {PostID}{/block:PermalinkPage}")
-  title #{config.title} - #{page.title}
-  != partial('_atoms/_metas')
-  != partial('_atoms/_links')
-  != partial('_atoms/_amps')
-  != partial('_atoms/_schema')
-  != css('css/style.css')
-  //- if cache
-  //-   != ampcss('css/style.css')
-  //- else
-  //-   != css('css/style.css')
-  //- 
+if is_amp
+  - var titleStr = `${post.title} - ${config.title}`
+  - var headPrefix = 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'
+else if is_post()
+  - var titleStr = `${page.title} - ${config.title}`
+  - var headPrefix = 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'
+else
+  - var titleStr = config.title
+  - var headPrefix = 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#'
+head(prefix=headPrefix)
+  title= titleStr
+  include _atoms/_metas
+  include _atoms/_links
+  include _atoms/_js
+  if is_amp
+    include _atoms/_amp-schema
+    if cssTxt !== ""
+      style(amp-custom)
+        = cssTxt
+  else
+    != css('css/style.css')

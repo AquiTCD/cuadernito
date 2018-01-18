@@ -1,6 +1,17 @@
 .paging
-  = post
-  if is_post()
+  if is_amp
+    if post.prev || post.next
+      ul.paging_items.is-permalink
+        if post.prev
+          li.paging_item: a.is-link.next(href=`${config.url}${config.root}${post.prev.path}`, rel='next')
+            i.fa.fa-angle-double-left &nbsp;
+            = post.prev.title
+        if post.next
+          li.paging_item: a.is-link(href=`${config.url}${config.root}${post.next.path}`, rel='previous')
+            = post.next.title
+            | &nbsp;
+            i.fa.fa-angle-double-right
+  else if is_post()
     if page.prev || page.next
       ul.paging_items.is-permalink
         if page.prev

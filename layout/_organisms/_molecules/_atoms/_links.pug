@@ -1,11 +1,14 @@
-link(rel='canonical', href="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}")
+link(rel='canonical', href=url)
+unless is_amp
+  if is_post() && config.generator_amp
+    link(rel='amphtml' href=`${config.url}${config.root}${page.path}/amp/index.html`)
 
 //- favicon and touch icon
 link(rel="apple-touch-icon" href='{PortraitURL-128}')
 //- link(rel="apple-touch-icon-precomposed" href="</apple-touch-icon.pngのパス>")
-link(rel="shortcut icon" href="{Favicon}")
+link(rel="shortcut icon" href=`${config.url}${config.root}${config.favicon}`)
 //- RSS
-link(rel="alternate", type="application/rss+xml", href="{RSS}")
+link(rel="alternate", type="application/rss+xml", href=`${config.url}${config.root}${config.feed.path}`)
 
 //- CSS
 link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada|Noto+Sans")

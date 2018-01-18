@@ -1,0 +1,14 @@
+//- share same template as normal, use is_amp in shared template. follows layout.pug.
+- var is_amp = true
+doctype html
+html(amp lang=config.language)
+  include ./_organisms/_molecules/_head
+  body.t-body
+    include ./_organisms/_molecules/_atoms/_analytics
+    include ./_organisms/_molecules/_siteHeader
+    include ./_organisms/_siteSidebar
+    main.l-main.autopagerize_page_element(role='main')
+      .l-main_container
+        include ./_organisms/_post
+    include ./_organisms/_molecules/_paging
+    include ./_organisms/_molecules/_siteFooter

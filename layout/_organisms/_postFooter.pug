@@ -1,4 +1,4 @@
 footer.postFooter
-  != partial('_molecules/_socialBtns')
-  if is_post()
-    != partial('_molecules/_atoms/_relatedPosts')
+  include _molecules/_socialBtns
+  if is_amp || is_post()
+    include _molecules/_atoms/_relatedPosts

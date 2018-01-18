@@ -1,0 +1,38 @@
+script(type="application/ld+json").
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": `${post.title},`
+    if post.description
+      "description": `${post.description},`
+    else if post.excerpt
+      "description": `${post.excerpt},`
+    "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id": `${config.url}${config.root}${post.path}`
+    },
+    "datePublished": `${post.date.toISOString()}`,
+    "dateModified": `${post.updated.toISOString()}`,
+    if post.eyeCatchImage && post.eyeCatchImage != "" && post.eyeCatchImageProperty && post.eyeCatchImageProperty.width && post.eyeCatchImageProperty.height
+      "image": {
+        "@type": "ImageObject",
+        "url": `${post.titleImageForAmp}`,
+        "width" : `${post.eyeCatchImageProperty.width}`,
+        "height" : `${post.eyeCatchImageProperty.height}`
+      },
+    "author": {
+      "@type": "Person",
+      "name": `${config.author}`
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": `${config.title}`,
+      if (config.generator_amp.logo.height && config.generator_amp.logo.width && config.generator_amp.logo.height)
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${logoPathForAmp}`,
+          "width": config.generator_amp.logo.width,
+          "height": config.generator_amp.logo.height
+        }
+    }
+  }

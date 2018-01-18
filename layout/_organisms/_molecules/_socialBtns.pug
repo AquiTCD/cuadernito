@@ -1,7 +1,16 @@
-ul.socialBtns(class=is_post() ? 'is-permalink' : '')
-  != partial('_atoms/_tumblrBtn')
-  != partial('_atoms/_hatebBtn')
-  != partial('_atoms/_twitterBtn')
-  != partial('_atoms/_fbBtn')
-  != partial('_atoms/_lineBtn')
-  != partial('_atoms/_pocketBtn')
+if is_amp || is_post()
+  ul.socialBtns.is-permalink
+    include _atoms/_tumblrBtn
+    include _atoms/_hatebBtn
+    include _atoms/_twitterBtn
+    include _atoms/_fbBtn
+    include _atoms/_lineBtn
+    include _atoms/_pocketBtn
+else
+  ul.socialBtns
+    include _atoms/_tumblrBtn
+    include _atoms/_hatebBtn
+    include _atoms/_twitterBtn
+    include _atoms/_fbBtn
+    include _atoms/_lineBtn
+    include _atoms/_pocketBtn

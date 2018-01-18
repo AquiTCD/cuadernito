@@ -1,3 +1,7 @@
 footer.l-footer.siteFooter
-  div.siteFooter_container(class=is_post() ? 'is-permalink' : '')
-    != partial('_atoms/_copyright')
+  if is_amp || is_post()
+    .siteFooter_container.is-permalink
+      include _atoms/_copyright
+  else
+    .siteFooter_container
+      include _atoms/_copyright

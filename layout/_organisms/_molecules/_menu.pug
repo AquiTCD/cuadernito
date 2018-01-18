@@ -14,7 +14,7 @@ ul.menu
           li: a.menu_tag(href="") 1
           li: a.menu_tag(href="") 2
   li.menu_item
-    != partial('_atoms/_tagcloud')
+    include _atoms/_tagcloud
   li.menu_item: a(href="/photo")
     i.fa.fa-fw.fa-picture-o
     | &nbsp;旅写真

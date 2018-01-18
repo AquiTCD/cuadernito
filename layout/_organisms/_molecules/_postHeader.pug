@@ -1,8 +1,10 @@
 header.postHeader
-  .postHeader_tags
-    if post.tags
-      i.fa.fa-fw.fa-tags
-      != list_tags(post.tags, { show_count: false})
-  .postHeader_date
-    i.fa.fa-fw.fa-clock-o
-    != partial('_atoms/_postDate')
+  //- TODO: fix for amp
+  unless is_amp
+    .postHeader_tags
+      if post.tags
+        i.fa.fa-fw.fa-tags
+        != list_tags(post.tags, { show_count: false})
+    .postHeader_date
+      i.fa.fa-fw.fa-clock-o
+      include _atoms/_postDate

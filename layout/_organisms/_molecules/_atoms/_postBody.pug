@@ -1,3 +1,5 @@
 .postBody
-  != toc(post.content)
+  //- TODO: fix for amp
+  unless is_amp
+    != toc(post.content)
   != post.content

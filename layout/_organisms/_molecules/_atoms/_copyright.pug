@@ -1,2 +1,4 @@
 span.copyright
-  | &copy;#{date(new Date(), 'YYYY')} #{config.title} by solunita.net
+  //- TODO: fix for amp
+  unless is_amp
+    | &copy;#{date(new Date(), 'YYYY')} #{config.title} by solunita.net

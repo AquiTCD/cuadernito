@@ -4,4 +4,6 @@ amp-accordion.tagcloud
       i.fa.fa-fw.fa-angle-right &nbsp;
       i.fa.fa-fw.fa-tags
       | &nbsp;Tags
-    != list_tags({ class: 'tagcloud', show_count: true })
+    //- TODO: fix when amp generating
+    unless is_amp
+      != list_tags({ class: 'tagcloud', show_count: true })
