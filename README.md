@@ -6,6 +6,8 @@ Requirements
 + hexo-related-popular-posts
 + hexo-include-markdown
 + hexo-generator-search
++ hexo-generator-amp
++ hexo-generator-json-content
 
 Configuration
 ------------------------------------------------------------
