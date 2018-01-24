@@ -4,7 +4,8 @@ nav.l-header_nav.siteNavbar(role='navigation')
       button.siteNavbar_btn.is-menu(on="tap:sidebar.toggle")
         i.fa.fa-bars &nbsp;
         | MENU
-    li.siteNavbar_item
+    //- TODO: search bar will be amp-bind with amp-list
+    //- li.siteNavbar_item
       form.siteNavbar_search(method="GET" action="/search" target="_top")
         input.siteNavbar_searchField(type="search" placeholder="Search..." name="q" value="{SearchQuery}")
         button.siteNavbar_btn.is-search.fa(type="submit") &#xf002;
