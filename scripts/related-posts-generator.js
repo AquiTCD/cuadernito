@@ -28,7 +28,7 @@ hexo.extend.helper.register('relatedPostsGenerator', function(args){
       returnHTML += generateHTML(args.json[i]);
   }
 
-  if(returnHTML != '')returnHTML = '<div class="relatedPosts_title">関連記事</div><ul class="' + args.class + '">' + returnHTML + '</ul>';
+  if(returnHTML != '')returnHTML = '<div class="relatedPosts"><div class="relatedPosts_title">関連記事</div><ul class="' + args.class + '">' + returnHTML + '</ul></div>';
 
   return returnHTML;
 });

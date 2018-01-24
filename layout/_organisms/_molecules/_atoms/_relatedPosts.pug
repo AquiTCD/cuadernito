@@ -1,10 +1,9 @@
 unless is_amp
-  .relatedPosts
-    != relatedPostsGenerator(popular_posts_json({ maxCount: 5 , ulClass: 'relatedPosts_list' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false}, post))
-    //- - var src = popular_posts_json({ maxCount: 5 , ulClass: 'relatedPosts_list' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false}, post)
-    //- amp-list.relatedPosts-list(width=300 height=100 src!=src layout="responsive")
-    //-   template(type="amp-mustache")
-    //-     li.relatedPosts-item
-    //-       .relatedPosts-title
-    //-         a(href="{{path}}" title="{{title}}" rel="bookmark")
-    //-           | {{title}}
+  != relatedPostsGenerator(popular_posts_json({ maxCount: 5 , ulClass: 'relatedPosts_list' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false}, post))
+  //- - var src = popular_posts_json({ maxCount: 5 , ulClass: 'relatedPosts_list' , PPMixingRate: 0.0 , isDate: false , isImage: true , isExcerpt: false}, post)
+  //- amp-list.relatedPosts-list(width=300 height=100 src!=src layout="responsive")
+  //-   template(type="amp-mustache")
+  //-     li.relatedPosts-item
+  //-       .relatedPosts-title
+  //-         a(href="{{path}}" title="{{title}}" rel="bookmark")
+  //-           | {{title}}
