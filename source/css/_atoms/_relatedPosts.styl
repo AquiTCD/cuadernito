@@ -1,0 +1,32 @@
+.relatedPosts
+  vertical-rhythm: true
+  background: $pure-white
+  border: 1px solid $bg-color-emphasis
+  border-radius: 5px
+  // rhythmical-padding: 0.5 0.5 0.5 0.5
+  rhythmical-margin: 1 0.5 0 0.5
+  +media-query(media-medium)
+    rhythmical-margin: 0 1 1 1
+  .relatedPosts_title
+    rhythmical-padding: 0.125 0.5 0.125 0.5
+    background-color: $bg-color-emphasis
+    font-weight: bold
+    border-bottom: 1px solid $bg-color-emphasis
+  ul.relatedPosts_list
+    margin:0
+  li.relatedPosts_list-item
+    margin:0
+    rhythmical-padding: 0.05 1 0 1
+    border-bottom: 1px solid $bg-color-emphasis
+    &:last-of-type
+      rhythmical-padding: 0.05 1 0.05 1
+      border-bottom: none
+    a
+      display: block
+    a:hover
+      background: $bg-color-emphasis
+      border-bottom: none
+  .relatedPosts_list-img
+    img
+      width: 160px
+      height: 90px
