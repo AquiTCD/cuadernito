@@ -1,15 +1,15 @@
 if is_amp
   - var titleStr = `${post.title} - ${config.title}`
   - var ogType = 'article'
-  - var ogUrl = post.path
+  - var ogUrl = `${config.url}${config.root}${page.path}`
 else if is_post()
   - var titleStr = `${page.title} - ${config.title}`
   - var ogType = 'article'
-  //- - var ogUrl = url_for(post.path)
+  - var ogUrl = `${config.url}${config.root}${page.path}`
 else
   - var titleStr = config.title
   - var ogType = 'blog'
-  - var ogUrl = config.url
+  - var ogUrl = `${config.url}${config.root}`
 meta(charset="UTF-8")
 meta(name="google-site-verification" content="JuGe3ADFt8Gx4WMPpxveUrdsqNxw7FsmpNEnWEKqgjo")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
