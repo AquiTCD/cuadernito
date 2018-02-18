@@ -1,11 +1,23 @@
+if is_amp
+  - var titleStr = `${post.title} - ${config.title}`
+  - var ogType = 'article'
+  - var ogUrl = post.path
+else if is_post()
+  - var titleStr = `${page.title} - ${config.title}`
+  - var ogType = 'article'
+  //- - var ogUrl = url_for(post.path)
+else
+  - var titleStr = config.title
+  - var ogType = 'blog'
+  - var ogUrl = config.url
 meta(charset="UTF-8")
 meta(name="google-site-verification" content="JuGe3ADFt8Gx4WMPpxveUrdsqNxw7FsmpNEnWEKqgjo")
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
 meta(name="format-detection" content="telephone=no,address=no,email=no")
 meta(name="apple-mobile-web-app-capable" content="yes")
-meta(property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
-meta(name="twitter:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}")
+meta(property="og:title" content=titleStr)
+meta(name="twitter:title" content=titleStr)
 meta(name="description" content=config.description)
 //- Custom Variables for Tumblr Theme
 meta(name=`${fb_app_id}`)
@@ -13,11 +25,11 @@ meta(name=`${google_analytics}`)
 //- meta(name=`${text:ApiKey}`}
 
 //- OGP General
-meta(property="og:type" content="{block:IndexPage}blog{/block:IndexPage}{block:PermalinkPage}article{PostID}{/block:PermalinkPage}")
-meta(property="og:image" content="{PortraitURL-128}")
-meta(property="og:description" content="{block:Description}{MetaDescription}{/block:Description}")
-meta(property='og:url', content="{block:IndexPage}{BlogURL}{/block:IndexPage}{block:PermalinkPage}{Permalink}{/block:PermalinkPage}")
-meta(property="og:site_name" content="{Title}")
+meta(property="og:type" content=ogType)
+//- meta(property="og:image" content="{PortraitURL-128}")
+meta(property="og:description" content=config.description)
+meta(property='og:url', content=ogUrl)
+meta(property="og:site_name" content=config.title)
 meta(property="og:locale" content="ja_JP")
 
 //- OGP Facebook
@@ -26,8 +38,8 @@ meta(property="fb:app_id" content=`${fb_app_id}`)
 meta(name="twitter:card" content="summary")
 //- / meta(name="twitter:site" content="@site")
 //- / meta(name="twitter:creator" content="@user")
-meta(name="twitter:description" content="{block:Description}{MetaDescription}{/block:Description}")
-meta(name="twitter:image" content="{PortraitURL-128}")
+meta(name="twitter:description" content=config.description)
+//- meta(name="twitter:image" content="{PortraitURL-128}")
 
 //- if it is photo page
 //- meta(property="og:image", content="{PhotoURL-HighRes}")
