@@ -1,6 +1,6 @@
 li.socialBtns_item.is-line
   .socialBtn
     unless is_amp
-      amp-social-share(type="line" layout="fixed" width="27" height="27" data-share-endpoint=`http://line.me/R/msg/text/?TITLE%3A${url_for(post.path)}`)
+      amp-social-share(type="line" layout="fixed" width="27" height="27" data-share-endpoint=`http://line.me/R/msg/text/?TITLE%3A${config.url}${config.root}${post.path}`)
     else
       amp-social-share(type="line" layout="fixed" width="27" height="27" data-share-endpoint="http://line.me/R/msg/text/?TITLE%3ASOURCE_URL")

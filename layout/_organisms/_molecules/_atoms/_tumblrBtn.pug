@@ -1,6 +1,6 @@
 li.socialBtns_item.is-reblog
   .socialBtn
     unless is_amp
-      amp-social-share(type="tumblr" layout="fixed" width="27" height="27" data-share-endpoint=`http://tumblr.com/widgets/share/tool?canonicalUrl=${url_for(post.path)}`)
+      amp-social-share(type="tumblr" layout="fixed" width="27" height="27" data-share-endpoint=`http://tumblr.com/widgets/share/tool?canonicalUrl=${config.url}${config.root}${post.path}`)
     else
       amp-social-share(type="tumblr" layout="fixed" width="27" height="27")
