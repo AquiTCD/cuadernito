@@ -1,6 +1,6 @@
 li.socialBtns_item.is-pocket
   .socialBtn
     unless is_amp
-      amp-social-share(type="pocket" layout="fixed" width="27" height="27" data-share-endpoint=url_for(post.path))
+      amp-social-share(type="pocket" layout="fixed" width="27" height="27" data-share-endpoint=`http://getpocket.com/edit?url=${url_for(post.path)}`)
     else
       amp-social-share(type="pocket" layout="fixed" width="27" height="27" data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL")
