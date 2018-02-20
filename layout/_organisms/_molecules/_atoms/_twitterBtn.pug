@@ -1,3 +1,8 @@
 li.socialBtns_item.is-twitter
   .socialBtn
-    amp-social-share(type="twitter" layout="fixed" width="27" height="27")
+    unless is_amp
+      amp-social-share(type="twitter" layout="fixed" width="27" height="27" data-share-endpoint=url_for(post.path))
+    else
+      amp-social-share(type="twitter" layout="fixed" width="27" height="27")
+      
+    
